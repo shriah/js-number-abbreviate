@@ -13,7 +13,7 @@
     }
     // class usage: new NumberAbbreviate(units)
     units = arguments[0]
-    this.units = units == null ? [['k',3], ['m',6], ['b',9], ['t',12]] : units
+    this.units = units == null ? ['k', 'm', 'b', 't'] : units
   }
 
   NumberAbbreviate.prototype._abbreviate = function(number, decPlaces) {
