@@ -1,6 +1,6 @@
 {
   "name": "@shriah/number-abbreviate",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Abbreviate a number and add unit letters e.g. 2200000 => '2.2m'",
   "author": "Dom Harrington <dom@harrington-mail.com>",
   "main": "index.js",
@@ -25,9 +25,8 @@
   "license": "BSD-2-Clause",
   "devDependencies": {
     "jshint": "~2.3.0",
-     "mocha": "^6.1.4"
+    "mocha": "^6.1.4"
   },
- 
   "bugs": {
     "url": "https://github.com/domharrington/js-number-abbreviate/issues"
   },
