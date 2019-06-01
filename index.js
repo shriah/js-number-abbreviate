@@ -13,15 +13,17 @@
     }
     // class usage: new NumberAbbreviate(units)
     units = arguments[0]
-    this.units = units == null ? ['k', 'm', 'b', 't'] : units
+    this.units = units == null ? [['k',3], ['m',6], ['b',9], ['t',12]] : units
   }
 
   NumberAbbreviate.prototype._abbreviate = function(number, decPlaces) {
     decPlaces = Math.pow(10, decPlaces)
 
     for (var i = this.units.length - 1; i >= 0; i--) {
+      var unit =  Array.isArray(this.units[i]) ? this.units[i][0] : this.units[i];
+      var place = Array.isArray(this.units[i]) ? this.units[i][1] : (i + 1)*3;
 
-      var size = Math.pow(10, (i + 1) * 3)
+      var size = Math.pow(10, place)
 
       if (size <= number) {
         number = Math.round(number * decPlaces / size) / decPlaces
@@ -31,7 +33,7 @@
           i++
         }
 
-        number += this.units[i]
+        number += unit
 
         break
       }

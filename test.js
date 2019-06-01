@@ -38,6 +38,14 @@ describe('number-abbreviate', function () {
     assert.equal(numAbbr.abbreviate(1234), '1k')
 
   })
+  it('should work for custom places and unit', function () {
+
+    var numAbbr = new NumAbbr([['k', 3], ['lk', 5], ['cr', 7]])
+    assert.equal(numAbbr.abbreviate(1234), '1k');
+    assert.equal(numAbbr.abbreviate(123456), '1lk')
+    assert.equal(numAbbr.abbreviate(123456789), '12cr')
+
+  })
 
   it('calling the function without `new` enters shorthand mode', function () {
 

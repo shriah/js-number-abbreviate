@@ -11,7 +11,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/jshint .",
     "pretest": "npm run-script lint",
-    "test": "./node_modules/.bin/_mocha -- -R spec -r should test.js",
+    "test": "mocha ",
     "prepublish": "npm test && npm prune"
   },
   "publishConfig": {
@@ -24,7 +24,9 @@
   ],
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "mocha": "~1.14.0",
     "jshint": "~2.3.0"
+  },
+  "dependencies": {
+    "mocha": "^6.1.4"
   }
 }
